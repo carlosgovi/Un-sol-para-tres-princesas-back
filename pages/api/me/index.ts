@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { User } from "models/user";
 import { authMiddleware } from "lib/middelwares";
 import method from "micro-method-router";
-
+import { handlerCORS } from "lib/middelwares";
 async function getHandler(req: NextApiRequest, res: NextApiResponse, token) {
   const user = new User(token.userId);
 
@@ -32,4 +32,5 @@ const handler = method({
   patch: postHandler,
   get: getHandler,
 });
-export default authMiddleware(handler);
+const authMiddlewarePass = authMiddleware(handler);
+export default handlerCORS(authMiddlewarePass);
