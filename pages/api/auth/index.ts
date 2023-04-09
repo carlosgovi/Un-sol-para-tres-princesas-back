@@ -7,6 +7,9 @@ import { handlerCORS } from "lib/middelwares";
 
 async function handlerAuth(req: NextApiRequest, res: NextApiResponse) {
   console.log("aqui el req.body", req.body);
+  if ((req.body = typeof String)) {
+    JSON.parse(req.body);
+  }
 
   const result = await sendCode(req.body.email);
   return res.send(result);
