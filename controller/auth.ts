@@ -7,6 +7,8 @@ import { sendEMail } from "./sendgrid";
 var seed = "asdfasdgasdgasd";
 var random = gen.create(seed);
 export async function findOrCreateAuth(email: string) {
+  console.log("losg del email q pasan a auth", email);
+
   //limpio el email que me pasan
   const emailClean = email.trim().toLowerCase();
   const auth = await Auth.findByEmail(emailClean);
