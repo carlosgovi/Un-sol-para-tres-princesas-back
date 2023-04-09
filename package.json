@@ -11,7 +11,7 @@
     "start": "next",
     "test": "ava"
   },
-  "type": "commonjs",
+  "type": "module",
   "ava": {
     "nodeArguments": [
       "--loader=@esbuild-kit/esm-loader",
