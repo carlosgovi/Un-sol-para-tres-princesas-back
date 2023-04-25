@@ -23,6 +23,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       });
     });
 }
-
-const authMiddlewarePass = authMiddleware(handler);
-export default handlerCORS(authMiddlewarePass);
+//Elimino los middelewares de auth para que culaquier user pueda hacer busquedas en la base de datos
+// const authMiddlewarePass = authMiddleware(handler);
+export default handlerCORS(handler);
