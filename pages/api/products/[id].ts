@@ -18,8 +18,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 }
 
-const authMiddlewarePass = authMiddleware(handler);
-export default handlerCORS(authMiddlewarePass);
+// const authMiddlewarePass = authMiddleware(handler);
+export default handlerCORS(handler);
 // async function handler(req: NextApiRequest, res: NextApiResponse) {
 //   const query = req.query.id as string;
 
