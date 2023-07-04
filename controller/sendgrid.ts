@@ -29,7 +29,7 @@ export async function sendEmailToSeller(
 ) {
   const msg = {
     to: emailVendedor,
-    from: emailVendedor, // Use the email address or domain you verified above
+    from: "cgovi66@gmail.com", // Use the email address or domain you verified above
     subject: "ocurrio una venta",
     html: `<strong>
     La compra la hizo: ${emailComprador} 
@@ -63,7 +63,7 @@ export async function sendEmailToBuilder(
 ) {
   const msg = {
     to: emailComprador,
-    from: emailVendedor, // Use the email address or domain you verified above
+    from: "cgovi66@gmail.com", // Use the email address or domain you verified above
     subject: "una compra a sido registrada a tu nombre ",
     html: `<strong>
     La compra la hizo: ${emailComprador}

@@ -23,12 +23,12 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
       const emailUserBuilder = dataUserBuilder.email;
 
       ///aqui la logica para enviar eel mail con sendgrid (((2 meils uno para el vendedor otro para el comprador)))
-      sendEmailToSeller(
+      await sendEmailToSeller(
         process.env.EMAIL_SELLER,
         emailUserBuilder,
         order.items[0]
       );
-      sendEmailToBuilder(
+      await sendEmailToBuilder(
         process.env.EMAIL_SELLER,
         emailUserBuilder,
         order.items[0]
