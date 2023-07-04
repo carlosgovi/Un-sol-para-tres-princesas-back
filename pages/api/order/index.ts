@@ -114,8 +114,7 @@ async function postHandler(req: NextApiRequest, res: NextApiResponse, token) {
       failure: "https//apx.school/failure_payments",
     },
     external_reference: order.id,
-    notification_url:
-      process.env.NOTIFICATION_URL /* + "api/ipn/mercadopago" */,
+    notification_url: process.env.NOTIFICATION_URL + "api/ipn/mercadopago",
   });
   ///le envio el url donde el cliente tiene que entrar para hacer el pago
   res.send({ url: pref });
